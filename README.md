@@ -1,73 +1,70 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Pebolso
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Pebolso é um gerenciador financeiro pessoal construído com NestJS, Prisma e MySQL. Este projeto fornece uma API robusta para gerenciar usuários, contas, transações e categorias, além de implementar autenticação JWT.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Sumário
 
-## Description
+- [Tecnologias](#tecnologias)
+- [Instalação](#instalação)
+- [Configuração](#configuração)
+- [Uso](#uso)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Tecnologias
 
-## Installation
+- [NestJS](https://nestjs.com/)
+- [Prisma](https://www.prisma.io/)
+- [MySQL](https://www.mysql.com/)
+- [JWT](https://jwt.io/)
 
-```bash
-$ npm install
-```
+## Instalação
 
-## Running the app
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/pebolso.git
+    cd pebolso
+    ```
 
-```bash
-# development
-$ npm run start
+2. Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-# watch mode
-$ npm run start:dev
+## Configuração
 
-# production mode
-$ npm run start:prod
-```
+1. Crie um arquivo `.env` na raiz do projeto com as chaves usadas no projeto, como o exemplo abaixo:
+    ```env
+    BACKEND_PORT=3000
+    DATABASE_URL="mysql://username:password@localhost:port/database"
+    JWT_SECRET="example_jwt_secret"
+    JWT_EXPIRES_IN="7d"
+    ```
 
-## Test
+2. Configure o banco de dados MySQL conforme necessário e certifique-se de que as credenciais no `.env` estão corretas.
 
-```bash
-# unit tests
-$ npm run test
+## Uso
 
-# e2e tests
-$ npm run test:e2e
+1. Execute as migrações do Prisma para criar as tabelas no banco de dados:
+    ```bash
+    npx prisma migrate dev
+    ```
 
-# test coverage
-$ npm run test:cov
-```
+2. Inicie o servidor de desenvolvimento:
+    ```bash
+    npm run start:dev
+    ```
 
-## Support
+    O servidor estará disponível em `http://localhost:BACKEND_PORT`.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Contribuição
 
-## Stay in touch
+1. Fork este repositório.
+2. Crie uma nova branch: `git checkout -b minha-feature`
+3. Faça suas alterações e commit: `git commit -m 'Minha nova feature'`
+4. Envie para a branch original: `git push origin minha-feature`
+5. Crie um Pull Request.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Licença
 
-## License
-
-Nest is [MIT licensed](LICENSE).
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
